@@ -14,7 +14,7 @@ pipeline {
 
             steps{
 
-            bat "docker buil -t evagutierrez/facturas-node-16 ."
+            bat "docker build -t evagutierrez/facturas-node-16 ."
         }
         }
 
