@@ -21,7 +21,7 @@ pipeline {
         stage ("Ejecución de contenedor"){
            
            steps{ 
-               bat "docker run -d --name app-facturas-node -p 8080:8080 evagutierrez/facturas-node-16"
+               bat "docker run -d --name app-facturas-node -p 8081:8080 evagutierrez/facturas-node-16"
 
             }
         }
