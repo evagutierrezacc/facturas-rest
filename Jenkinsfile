@@ -6,7 +6,7 @@ pipeline {
         stage ("Descargar el codigo de la aplicacion"){
 
             steps{
-                git "url"
+                git "https://github.com/evagutierrezacc/facturas-rest.git"
             }
         }
         
@@ -14,14 +14,14 @@ pipeline {
 
             steps{
 
-            bat "docker buil -t evagutierrez/app1 ."
+            bat "docker buil -t evagutierrez/facturas-node-16 ."
         }
         }
 
         stage ("Ejecución de contenedor"){
            
            steps{ 
-               bat "docker run -d --name app1 -p 8080:8080 evagutierrez/app1"
+               bat "docker run -d --name app-facturas-node -p 8080:8080 evagutierrez/facturas-node-16"
 
             }
         }
@@ -30,8 +30,8 @@ pipeline {
            
             steps {
                 bat "docker stop app1"
-                bat "docker container rm app1"
-                bat "docker image rm evagutierrez/app1"
+                bat "docker container rm app-facturas-node"
+                bat "docker image rm evagutierrez/facturas-node-16"
 
             }
 
